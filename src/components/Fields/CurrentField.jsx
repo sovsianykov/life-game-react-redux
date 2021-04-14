@@ -1,5 +1,5 @@
 import React from "react";
-import {Box} from "@material-ui/core";
+import {Box, Button} from "@material-ui/core";
 import { fieldCreator } from "./FieldGenerator";
 import useStyles from "./styles"
 import Cell from "./Cell";
@@ -16,9 +16,14 @@ const  CurrentField= () =>{
         <>
             <div className={classes.fieldContainer}>
                 {fieldCurrent.map((cell,i) =>(
-                    <Cell key={i} cell={cell} id={i} />
+                    <Cell key={i} cell={cell} id={i} ></Cell>
                 ))}
             </div>
+            <Box>
+                <Button variant='contained' color='primary' >Go</Button>
+                <Button variant='contained' color='secondary' >Stop</Button>
+                <Button variant='contained' color='default' >Reset</Button>
+            </Box>
 
         </>
     )
