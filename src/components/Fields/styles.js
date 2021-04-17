@@ -39,11 +39,7 @@ export default makeStyles(() =>({
         // fontSize : 0,
         fontWeight : 600,
         letterSpacing : 0
-
     }
-
-
-
 }))
 
 
