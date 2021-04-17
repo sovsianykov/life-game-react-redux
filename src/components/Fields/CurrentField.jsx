@@ -50,9 +50,9 @@ const  CurrentField= () =>{
             </div>
             <Box>
                 <Button variant='contained' color='primary' onClick={handleStep1} >Step1</Button>
-                <Button variant='contained' color='secondary' onClick={handleStep2} >Step2</Button>
-                <Button variant='contained' color='default' onClick={handleStep3} >Step3</Button>
-                <Button variant='contained' color='dark' onClick={handleSubscribe} >RxjS</Button>
+                <Button variant='contained' color='primary' onClick={handleStep2} >Step2</Button>
+                <Button variant='contained' color='primary' onClick={handleStep3} >Step3</Button>
+                <Button variant='contained' color='secondary' onClick={handleSubscribe} >RxjS</Button>
             </Box>
 
         </>
