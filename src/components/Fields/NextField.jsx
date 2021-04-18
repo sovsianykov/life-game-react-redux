@@ -1,7 +1,7 @@
 
 import React from "react";
 import {Box, Button} from "@material-ui/core";
-import { fieldCreator } from "./FieldGenerator";
+import { fieldCreator } from "./fieldSetup";
 import useStyles from "./styles"
 import Cell from "./Cell";
 
