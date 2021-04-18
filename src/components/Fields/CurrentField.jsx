@@ -5,25 +5,31 @@ import useStyles from "./styles"
 import Cell from "./Cell";
 import { step1, step2, step3 } from "../livingprocess/living";
 import {interval} from 'rxjs'
-import { map,take } from "rxjs/operators";
+import { map, take, mapTo} from "rxjs/operators";
 
 let fieldSetup = fieldCreator( 20, 20);
 
 const  CurrentField= () =>{
     const classes = useStyles()
     const [mainField, setMainField] = useState(fieldSetup)
+    const [stepLog, setStepLog] = useState(' Step 0')
 
   const handleStep1 = () =>{
-      setMainField(step1(mainField))
+     setTimeout(()=> setMainField(step1(mainField)),10)
+      setStepLog('Step1')
   }
   const handleStep2 =()=>{
-      setMainField(step2(mainField))
+      setTimeout(()=> setMainField(step2(mainField)),500)
+      setStepLog('Step2')
+
   }
     const handleStep3 =()=>{
-        setMainField(step3(mainField))
+        setTimeout(()=> setMainField(step3(mainField)),800)
+        setStepLog('Step3')
+
     }
 
-    const stream$ = interval(1000)
+    const stream$ = interval(1600)
         .pipe(
            map( handleStep1 ),
            map( handleStep2 ),
@@ -53,9 +59,9 @@ const  CurrentField= () =>{
                 <Button variant='contained' color='primary' onClick={handleStep2} >Step2</Button>
                 <Button variant='contained' color='primary' onClick={handleStep3} >Step3</Button>
                 <Button variant='contained' color='secondary' onClick={handleSubscribe} >RxjS</Button>
+                {stepLog}
             </Box>
-
         </>
     )
 }
-export default CurrentField
+export default CurrentField;
