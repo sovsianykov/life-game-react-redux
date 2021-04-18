@@ -10,7 +10,6 @@ const Homepage = () =>{
             <Grid item xs={12} md={5} sm={5} >
                 <CurrentField/>
             </Grid>
-          */}
          </Grid>
         </Box>
     )
