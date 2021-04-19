@@ -1,20 +1,22 @@
-import React, {useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import useStyles from "./styles"
 
 
- const Cell = ({cell, }) => {
+ const Cell = ({cell }) => {
  const classes = useStyles()
      const [ live , setLive] = useState(false)
+   const onClickHandler = useCallback(()=> {
 
+       cell.isLive = true;
+       console.log(cell);
+       setLive(!live);
+
+   }, [live,cell])
 
     return (
         <>
            <div className={ cell.isLive ? classes.active : classes.default }
-                onClick={() => {
-                    cell.isLive = true
-                    console.log(cell)
-                    setLive(!live)
-                }}>{cell.value}
+                onClick={onClickHandler}>{cell.value}
            </div>
         </>
     )
