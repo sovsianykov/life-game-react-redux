@@ -1,6 +1,8 @@
 import React, {useCallback, useState} from 'react'
 import useStyles from "./styles"
+import click from '../../assets/clickEfx.mp3'
 
+const audio = new Audio(click)
 
  const Cell = ({cell }) => {
  const classes = useStyles()
@@ -9,6 +11,7 @@ import useStyles from "./styles"
 
        cell.isLive = true;
        console.log(cell);
+       audio.play()
        setLive(!live);
 
    }, [live,cell])
@@ -16,7 +19,7 @@ import useStyles from "./styles"
     return (
         <>
            <div className={ cell.isLive ? classes.active : classes.default }
-                onClick={onClickHandler}>{cell.value}
+                onClick={onClickHandler}>{cell.value ? cell.value : `'`}
            </div>
         </>
     )

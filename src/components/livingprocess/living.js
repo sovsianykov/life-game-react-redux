@@ -1,4 +1,8 @@
+import click from '../../assets/69880c1f5e57698.mp3'
+
+const audio = new Audio(click)
 export function step1(field) {
+
 
    return field.map((cell, i) => {
        if (field[i - 1]) {
@@ -48,6 +52,7 @@ export function step1(field) {
 export function step2(field) {
 
     return field.map((cell, i) => {
+        audio.play()
         if (field[i].isLive) {
             if (field[i].value < 2 || field[i].value > 3) {
                 field[i].isLive = false

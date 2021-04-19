@@ -5,14 +5,15 @@ export default makeStyles(() =>({
     default : {
         width : '30px',
         height : '30px',
-        background : "yellow",
+        background : "dimgrey",
         display : "inline-flex",
         alignItems:"center",
         justifyContent : 'center',
         border : "0.5px solid black ",
         boxSizing : "border-box",
         transition : ' 0.7s ease-in-out ',
-        cursor : 'pointer'
+        cursor : 'pointer',
+        margin : '0!important'
 
 
 
